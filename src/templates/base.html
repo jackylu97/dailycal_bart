@@ -93,6 +93,12 @@
                 $(".slide-item-" + curr_index).removeClass("hidden");
               }
 
+              if (curr_index == 0) {
+                $("#dc-logo-title").removeClass("hidden");
+              } else {
+                $("#dc-logo-title").addClass("hidden");
+              }
+
               console.log(curr_index);
             }
 

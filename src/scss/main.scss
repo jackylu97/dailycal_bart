@@ -127,3 +127,16 @@ p {
 .pa4 {
     padding: 3rem;
 }
+
+#dc-logo-title {
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  margin-top: 10px;
+  width: 100%;
+}
+
+#dc-logo-img {
+  width: 12vmin;
+  height: auto;
+}
