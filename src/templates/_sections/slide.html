@@ -1,0 +1,10 @@
+<div class="slide w-100 h-100 tc" style="background-color: gray;">
+  <span> Here is some text, wow!</span>
+  {{ section.text | markdown }}
+  <figure >
+    <image style="width:500px;" src="{{section.image_url}}"></image>
+    <figcaption style="text-align:center">
+      <span>{{section.caption}}</span>
+    </figcaption>
+  </figure>
+</div>

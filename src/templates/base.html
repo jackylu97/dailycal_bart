@@ -1,0 +1,108 @@
+{% macro jpg(name, alt='Image') %}
+<img
+  src="images/{{ name }}-1800.jpg"
+  srcset="images/{{ name }}-400.jpg 400w, images/{{ name }}-800.jpg 800w, images/{{ name }}-1200.jpg 1200w, images/{{ name }}-1800.jpg 1800w"
+  alt="{{ alt }}"
+/>
+{% endmacro %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2568634-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-2568634-2');
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8">
+        {%block title%}<title>The Daily Californian</title>{%endblock%}
+        {%include "meta/icons.html"%}
+        {%include "meta/social.html"%}
+        <!-- Tachyons -->
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+
+        {% if env == 'production' %}
+        <!-- Custom CSS -->
+        <link href="css/main-app.css" rel="stylesheet">
+        {% endif %}
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+        <!-- Font awesome -->
+        <script src="https://use.fontawesome.com/6c4d370962.js"></script>
+        <!-- jQuery -->
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+         <div class="h-100">
+            {%block content%}{%endblock%}
+         </div>
+
+         <!-- {%block footer%}
+         <footer>
+           <div id="global-footer">
+                <p class="footer-text">Questions, comments or corrections? Email <a href="mailto:projects@dailycal.org">projects@dailycal.org</a>.</p>
+
+                <p class="footer-text">Support innovative, independent student journalism. <a href="https://donate.dailycal.org/" target="_blank">Donate today</a>.</p>
+
+                <p class="footer-text">Copyright © 2017 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc.</p>
+           </div>
+         </footer>
+         {%endblock%} -->
+         <script>
+          var slides = $(".slide");
+          slides.addClass(function(index) {
+            var ret_class = "slide-item-" + index;
+            if (index > 0) {
+              ret_class += " hidden";
+            }
+            return ret_class;
+          });
+
+          var curr_index = 0;
+          carousel = (function() {
+            var next = $(".next");
+            var prev = $(".prev");
+
+            function navigate(direction) {
+              // display next slide
+              if (direction == 1 && curr_index < slides.length - 1) {
+                // hide current slide
+                var curr_slide = $(".slide-item-" + curr_index);
+                curr_slide.addClass("hidden");
+
+                curr_index += 1;
+                $(".slide-item-" + curr_index).removeClass("hidden");
+              }
+              // display prev slide
+              else if (direction == -1 && curr_index > 0) {
+                // hide current slide
+                var curr_slide = $(".slide-item-" + curr_index);
+                curr_slide.addClass("hidden");
+
+                curr_index -= 1;
+                $(".slide-item-" + curr_index).removeClass("hidden");
+              }
+
+              console.log(curr_index);
+            }
+
+            next.click(function(ev){navigate(1)});
+            prev.click(function(ev){navigate(-1)});
+          }) ();
+
+
+         </script>
+         <script type="text/javascript">window.tweetText = "{{META.share.twitter.share_tweet}}";</script>
+         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+         <script type="text/javascript" src="js/main-app.bundle.js"></script>
+    </body>
+</html>
