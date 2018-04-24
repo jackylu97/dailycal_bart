@@ -1,10 +1,21 @@
-<div id='dc-logo-title'>
-  <a href="http://dailycal.org">
-    <img id='dc-logo-img' src="../../images/blackDCLogo.png">
-  </a>
-</div>
-
 <div class="slide vh-100 dt w-100 tc bg-dark-gray white cover" style="background:url(../../images/{{section.bgimage}}) no-repeat center;">
+    <nav class="w-100" style="position:absolute; top:0; left:0; "title="navigation">
+        <div class="w-100" style="background: #A74149" id="global-header">
+            <div class="" id="global-branding">
+              <div class="navbar-dc-logo">
+               <a class="" href="http://www.dailycal.org/" title="The Daily Californian" target="_top">
+                 <img class=" navbar-brand" src="http://projects.dailycal.org/images/masthead.png">
+               </a>
+              </div>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ META.url | urlencode }}"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/intent/tweet?url={{ META.url | urlencode }}&amp;via=dailycal&amp;text={{META.share.twitter.share_tweet | urlencode}}"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+
+        </div>
+    </nav>
   <div class="dtc v-mid">
     <div class="bg-white-80 dib center pa5">
       <h2 class="f1 f-subheadline-l fw1 red playfair">The Great</h2>

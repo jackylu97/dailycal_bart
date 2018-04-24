@@ -31,7 +31,7 @@
         overflow: hidden;
     }
 
-    nav a {
+    navb a {
         position: absolute;
         top: 50%;
         display: block;
@@ -42,15 +42,15 @@
         transform: translateY(-50%);
     }
 
-    nav a.prev {
+    navb a.prev {
         left: 0;
     }
 
-    nav a.next {
+    navb a.next {
         right: 0;
     }
 
-    nav a svg {
+    navb a svg {
         display: block;
         margin: 0 auto;
         padding: 0;
@@ -90,16 +90,14 @@
 		</div>
   <div class="carousel-container h-100">
       <!-- CODE FOR ARROW NAVIGATION ADAPTED FROM CODROPS: https://tympanus.net/codrops/2014/05/28/arrow-navigation-styles/ -->
-      <nav class="nav-growpop">
-					<a class="prev hidden">
-						<span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-left-2"></svg></span>
-					</a>
-					<a class="next">
-						<span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-right-2"></svg></span>
-					</a>
-				</nav>
-    <!-- <button class="prev"> <- </button>
-    <button class="next"> -> </button> -->
+        <navb class="nav-growpop">
+            <a class="prev hidden">
+                <span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-left-2"></svg></span>
+            </a>
+            <a class="next">
+                <span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-right-2"></svg></span>
+            </a>
+        </navb>
     {% for section in ARCHIE.sections %}
         {% include '_sections/' + section.type +'.html' %}
     {% endfor %}

@@ -1,17 +1,17 @@
-// @import 'bootstrap';
+@import 'bootstrap';
 //
 // @import 'breakpoints';
-// @import 'mixins';
-// @import 'colors/base';
-// @import 'colors/diverging';
-// @import 'colors/qualitative';
-// @import 'colors/sequential';
-// @import 'fonts';
-// @import 'icons';
+@import 'mixins';
+@import 'colors/base';
+@import 'colors/diverging';
+@import 'colors/qualitative';
+@import 'colors/sequential';
+@import 'fonts';
+@import 'icons';
 //
 // @import 'elements';
 // @import 'refer';
-// @import 'navigation';
+@import 'navigation';
 // @import 'header';
 // @import 'footer';
 // @import 'photos';
@@ -137,7 +137,7 @@ p {
 }
 
 #dc-logo-img {
-  width: 12vmin;
+  width: 10vmin;
   height: auto;
 }
 

@@ -47,17 +47,6 @@
             {%block content%}{%endblock%}
          </div>
 
-         <!-- {%block footer%}
-         <footer>
-           <div id="global-footer">
-                <p class="footer-text">Questions, comments or corrections? Email <a href="mailto:projects@dailycal.org">projects@dailycal.org</a>.</p>
-
-                <p class="footer-text">Support innovative, independent student journalism. <a href="https://donate.dailycal.org/" target="_blank">Donate today</a>.</p>
-
-                <p class="footer-text">Copyright © 2017 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc.</p>
-           </div>
-         </footer>
-         {%endblock%} -->
          <script>
           var slides = $(".slide");
           slides.addClass(function(index) {
@@ -93,11 +82,11 @@
                 $(".slide-item-" + curr_index).removeClass("hidden");
               }
 
-              if (curr_index == 0) {
-                $("#dc-logo-title").removeClass("hidden");
-              } else {
-                $("#dc-logo-title").addClass("hidden");
-              }
+              // if (curr_index == 0) {
+              //   $("#dc-logo-title").removeClass("hidden");
+              // } else {
+              //   $("#dc-logo-title").addClass("hidden");
+              // }
 
               console.log(curr_index);
               if (curr_index == slides.length - 1) {
