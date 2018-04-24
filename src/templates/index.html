@@ -23,10 +23,83 @@
 
 {%block content%}
 
+    <style>
+    .svg-wrap {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+    }
 
+    nav a {
+        position: absolute;
+        top: 50%;
+        display: block;
+        outline: none;
+        text-align: left;
+        z-index: 1000;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    nav a.prev {
+        left: 0;
+    }
+
+    nav a.next {
+        right: 0;
+    }
+
+    nav a svg {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .nav-growpop .icon-wrap {
+    	position: relative;
+    	z-index: 100;
+    	display: block;
+    	padding: 20px 10px;
+    	border: 0px solid #b24e44;
+    	background: #b24e44;
+    	-webkit-transition: border-width 0.3s 0.15s;
+    	transition: border-width 0.3s 0.15s;
+    }
+
+    .nav-growpop svg.icon {
+    	fill: #fff;
+    }
+
+
+    .nav-growpop a:hover .icon-wrap {
+    	border-top-width: 40px;
+    	border-bottom-width: 40px;
+    	-webkit-transition-delay: 0s;
+    	transition-delay: 0s;
+    }
+
+    </style>
+    <div class="svg-wrap">
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-left-2" d="M26.667 10.667q1.104 0 1.885 0.781t0.781 1.885q0 1.125-0.792 1.896l-14.104 14.104h41.563q1.104 0 1.885 0.781t0.781 1.885-0.781 1.885-1.885 0.781h-41.563l14.104 14.104q0.792 0.771 0.792 1.896 0 1.104-0.781 1.885t-1.885 0.781q-1.125 0-1.896-0.771l-18.667-18.667q-0.771-0.813-0.771-1.896t0.771-1.896l18.667-18.667q0.792-0.771 1.896-0.771z" />
+			</svg>
+			<svg width="64" height="64" viewBox="0 0 64 64">
+				<path id="arrow-right-2" d="M37.333 10.667q1.125 0 1.896 0.771l18.667 18.667q0.771 0.771 0.771 1.896t-0.771 1.896l-18.667 18.667q-0.771 0.771-1.896 0.771-1.146 0-1.906-0.76t-0.76-1.906q0-1.125 0.771-1.896l14.125-14.104h-41.563q-1.104 0-1.885-0.781t-0.781-1.885 0.781-1.885 1.885-0.781h41.563l-14.125-14.104q-0.771-0.771-0.771-1.896 0-1.146 0.76-1.906t1.906-0.76z" />
+			</svg>
+		</div>
   <div class="carousel-container h-100">
-    <button class="prev"> <- </button>
-    <button class="next"> -> </button>
+      <!-- CODE FOR ARROW NAVIGATION ADAPTED FROM CODROPS: https://tympanus.net/codrops/2014/05/28/arrow-navigation-styles/ -->
+      <nav class="nav-growpop">
+					<a class="prev">
+						<span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-left-2"></svg></span>
+					</a>
+					<a class="next">
+						<span class="icon-wrap"><svg class="icon" width="24" height="24" viewBox="0 0 64 64"><use xlink:href="#arrow-right-2"></svg></span>
+					</a>
+				</nav>
+    <!-- <button class="prev"> <- </button>
+    <button class="next"> -> </button> -->
     {% for section in ARCHIE.sections %}
         {% include '_sections/' + section.type +'.html' %}
     {% endfor %}
